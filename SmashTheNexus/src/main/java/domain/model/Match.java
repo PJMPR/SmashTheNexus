@@ -6,8 +6,8 @@ public class Match {
 
 	private int ID;
 	private Date date;
-	private Team FirstTeam;
-	private Team SecondTeam;
+	private String FirstTeam;
+	private String SecondTeam;
 	private String Result;
 	private int BestOf;
 	
@@ -24,16 +24,16 @@ public class Match {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public Team getFirstTeam() {
+	public String getFirstTeam() {
 		return FirstTeam;
 	}
-	public void setFirstTeam(Team firstTeam) {
+	public void setFirstTeam(String firstTeam) {
 		FirstTeam = firstTeam;
 	}
-	public Team getSecondTeam() {
+	public String getSecondTeam() {
 		return SecondTeam;
 	}
-	public void setSecondTeam(Team secondTeam) {
+	public void setSecondTeam(String secondTeam) {
 		SecondTeam = secondTeam;
 	}
 	public String getResult() {

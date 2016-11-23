@@ -6,9 +6,9 @@ public class TeamMember {
 	private String Name;
 	private String Surname;
 	private String Nick;
-	private Team TeamID;
+	private int TeamID;
 	private int Age;
-	private int Country;
+	private String Country;
 	private String FavouriteChampion;
 	
 	
@@ -30,10 +30,10 @@ public class TeamMember {
 	public void setNick(String nick) {
 		Nick = nick;
 	}
-	public Team getTeamID() {
+	public int getTeamID() {
 		return TeamID;
 	}
-	public void setTeamID(Team teamID) {
+	public void setTeamID(int teamID) {
 		TeamID = teamID;
 	}
 	public int getAge() {
@@ -42,10 +42,10 @@ public class TeamMember {
 	public void setAge(int age) {
 		Age = age;
 	}
-	public int getCountry() {
+	public String getCountry() {
 		return Country;
 	}
-	public void setCountry(int country) {
+	public void setCountry(String country) {
 		Country = country;
 	}
 	public String getFavouriteChampion() {
