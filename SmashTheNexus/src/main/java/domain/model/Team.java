@@ -1,8 +1,8 @@
 package domain.model;
 
-public class Team {
+public class Team implements IHaveId {
 	
-	private int ID;
+	private int id;
 	private String Name;
 	private int Wins;
 	private int Loses;
@@ -10,11 +10,12 @@ public class Team {
 	private String ShortName;
 	
 	
-	public int getID() {
-		return ID;
+
+	public int getId() {
+		return id;
 	}
-	public void setID(int iD) {
-		ID = iD;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getName() {
 		return Name;

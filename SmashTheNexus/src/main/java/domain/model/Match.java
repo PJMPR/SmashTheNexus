@@ -2,9 +2,9 @@ package domain.model;
 
 import java.util.Date;
 
-public class Match {
+public class Match implements IHaveId{
 
-	private int ID;
+	private int id;
 	private Date date;
 	private String FirstTeam;
 	private String SecondTeam;
@@ -12,11 +12,11 @@ public class Match {
 	private int BestOf;
 	
 	
-	public int getID() {
-		return ID;
+	public int getId() {
+		return id;
 	}
-	public void setID(int iD) {
-		ID = iD;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public Date getDate() {
 		return date;
@@ -48,5 +48,6 @@ public class Match {
 	public void setBestOf(int bestOf) {
 		BestOf = bestOf;
 	}
+
 	
 }
