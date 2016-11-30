@@ -16,7 +16,6 @@ public class MatchRepository extends RepositoryBase<Match> {
 
 	@Override
 	protected void setInsert(Match entity) throws SQLException {
-		// TODO Auto-generated method stub
 		insert.setDate(1, (Date) entity.getDate());
 		insert.setString(2, entity.getFirstTeam());
 		insert.setString(3, entity.getSecondTeam());
@@ -27,7 +26,6 @@ public class MatchRepository extends RepositoryBase<Match> {
 
 	@Override
 	protected void setUpdate(Match entity) throws SQLException {
-		// TODO Auto-generated method stub
 		update.setDate(1, (Date) entity.getDate());
 		update.setString(2, entity.getFirstTeam());
 		update.setString(3, entity.getSecondTeam());

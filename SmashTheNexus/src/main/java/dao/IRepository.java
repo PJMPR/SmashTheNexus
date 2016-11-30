@@ -6,7 +6,7 @@ import domain.model.IHaveId;
 
 public interface IRepository<TEntity extends IHaveId> {
 
-	public TEntity get(int ID);
+	public TEntity get(int id);
 
 	public List<TEntity> getAll();
 
