@@ -26,7 +26,6 @@ public class TeamMemberRepository extends RepositoryBase<TeamMember> implements 
 		insert.setInt(5, entity.getAge());
 		insert.setString(6, entity.getCountry());
 		insert.setString(7, entity.getFavouriteChampion());
-		insert.executeUpdate();
 		
 	}
 
@@ -40,7 +39,6 @@ public class TeamMemberRepository extends RepositoryBase<TeamMember> implements 
 		update.setString(6, entity.getCountry());
 		update.setString(7, entity.getFavouriteChampion());
 		update.setInt(8, entity.getId());
-		update.executeUpdate();		
 	}
 
 	@Override
@@ -54,7 +52,7 @@ public class TeamMemberRepository extends RepositoryBase<TeamMember> implements 
 				+ "name varchar(50)," + "surname varchar(50)," + "nick varchar(50)," + "Team_Id int," 
 				+ "age int,"
 				+ "country varchar(30),"
-				+ "favourite_champion varchar(30),"+ ")";
+				+ "favourite_champion varchar(30)"+ ")";
 	}
 
 	@Override
