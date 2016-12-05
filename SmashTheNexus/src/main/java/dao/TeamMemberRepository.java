@@ -1,16 +1,20 @@
 package dao;
 
+
 import java.sql.Connection;
 import java.sql.SQLException;
-import dao.mappers.TeamMemberMapper;
+
+import dao.mappers.IMapResultSetIntoEntity;
+import dao.uow.IUnitOfWork;
+import domain.model.Team;
 import domain.model.TeamMember;
 
-public class TeamMemberRepository extends RepositoryBase<TeamMember> {
+public class TeamMemberRepository extends RepositoryBase<TeamMember> implements ITeamMemberRepository {
 
-
-	public TeamMemberRepository(Connection connection, TeamMemberMapper mapper, IRepository<TeamMember> teamMemberRepo) {
-		super(connection, mapper);
-		mapper.setTeamMemberRepo(teamMemberRepo);
+	private TeamRepository repo;
+	
+	public TeamMemberRepository(Connection connection, IMapResultSetIntoEntity<TeamMember> mapper, IUnitOfWork uow) {
+		super(connection, mapper, uow);
 	}
 
 	@Override
@@ -62,5 +66,11 @@ public class TeamMemberRepository extends RepositoryBase<TeamMember> {
 	protected String updateSql() {
 		return "UPDATE team_member SET name=?,surname=?,nick=?,team_id=?,age=?,country=?,favourite_champion=? WHERE id=?";
 	}
+	
+	public void assignToTeam(TeamMember teamMemberWithoutTeam) {
 
+		Team t1 = repo.get(teamMemberWithoutTeam.getId());
+		teamMemberWithoutTeam.setTeamID(t1.getId());
+
+	}
 }

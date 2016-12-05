@@ -4,11 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import dao.MatchRepository;
-import dao.TeamMemberRepository;
-import dao.TeamRepository;
+import dao.IRepositoryCatalog;
+import dao.RepositoryCatalog;
+import dao.uow.UnitOfWork;
 import domain.model.Team;
-import domain.model.TeamMember;
 
 public class App 
 {
@@ -17,7 +16,16 @@ public class App
     	String url = "jdbc:hsqldb:hsql://localhost/workdb";
     	try {
 			Connection connection = DriverManager.getConnection(url);
-			
+			IRepositoryCatalog catalog = new RepositoryCatalog(new UnitOfWork(connection), connection);
+			Team team1 = new Team();
+			team1.setName("aaa");
+			team1.setWins(0);
+			team1.setLoses(0);
+			team1.setFormDate(2015);
+			team1.setShortName("a");
+			catalog.teams().add(team1);
+			catalog.teams().withShortName("a");
+			catalog.saveAndClose();
 		}
     	
     	catch (SQLException e) {

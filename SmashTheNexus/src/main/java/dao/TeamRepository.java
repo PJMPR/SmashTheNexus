@@ -2,15 +2,17 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import dao.mappers.TeamMapper;
+import java.util.List;
+
+import dao.mappers.IMapResultSetIntoEntity;
+import dao.uow.IUnitOfWork;
 import domain.model.Team;
 
 
-public class TeamRepository extends RepositoryBase<Team>{
+public class TeamRepository extends RepositoryBase<Team> implements ITeamRepository{
 
-	public TeamRepository(Connection connection, TeamMapper mapper, IRepository<Team> teamRepo) {
-		super(connection, mapper);
-		mapper.setTeamRepo(teamRepo);
+	public TeamRepository(Connection connection, IMapResultSetIntoEntity<Team> mapper, IUnitOfWork uow) {
+		super(connection, mapper, uow);
 	}
 
 	@Override
@@ -52,6 +54,11 @@ public class TeamRepository extends RepositoryBase<Team>{
 	@Override
 	protected String updateSql() {
 		return "UPDATE team SET name=?,wins=?,loses=?,form_date=?,short_name=? WHERE id=?";
+	}
+
+	public List<Team> withShortName(String shortName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

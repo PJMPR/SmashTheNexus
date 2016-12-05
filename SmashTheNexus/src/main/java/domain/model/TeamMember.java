@@ -6,7 +6,8 @@ public class TeamMember implements IHaveId{
 	private String Name;
 	private String Surname;
 	private String Nick;
-	private int TeamID;
+	private int TeamId;
+	private Team team;
 	private int Age;
 	private String Country;
 	private String FavouriteChampion;
@@ -36,11 +37,11 @@ public class TeamMember implements IHaveId{
 	}
 
 	public int getTeamID() {
-		return TeamID;
+		return TeamId;
 	}
 
 	public void setTeamID(int teamID) {
-		TeamID = teamID;
+		TeamId = teamID;
 	}
 
 	public int getAge() {
@@ -73,6 +74,14 @@ public class TeamMember implements IHaveId{
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public Team getTeam() {
+		return team;
+	}
+
+	public void setTeam(Team team) {
+		this.team = team;
 	}
 
 }

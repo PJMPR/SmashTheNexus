@@ -6,8 +6,10 @@ public class Match implements IHaveId{
 
 	private int id;
 	private Date date;
-	private String FirstTeam;
-	private String SecondTeam;
+	private Team FirstTeam;
+	private Team SecondTeam;
+	private int FirstTeamId;
+	private int SecondTeamId;
 	private String Result;
 	private int BestOf;
 	
@@ -24,16 +26,16 @@ public class Match implements IHaveId{
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public String getFirstTeam() {
+	public Team getFirstTeam() {
 		return FirstTeam;
 	}
-	public void setFirstTeam(String firstTeam) {
+	public void setFirstTeam(Team firstTeam) {
 		FirstTeam = firstTeam;
 	}
-	public String getSecondTeam() {
+	public Team getSecondTeam() {
 		return SecondTeam;
 	}
-	public void setSecondTeam(String secondTeam) {
+	public void setSecondTeam(Team secondTeam) {
 		SecondTeam = secondTeam;
 	}
 	public String getResult() {
@@ -47,6 +49,18 @@ public class Match implements IHaveId{
 	}
 	public void setBestOf(int bestOf) {
 		BestOf = bestOf;
+	}
+	public int getFirstTeamId() {
+		return FirstTeamId;
+	}
+	public void setFirstTeamId(int firstTeamId) {
+		FirstTeamId = firstTeamId;
+	}
+	public int getSecondTeamId() {
+		return SecondTeamId;
+	}
+	public void setSecondTeamId(int secondTeamId) {
+		SecondTeamId = secondTeamId;
 	}
 
 	

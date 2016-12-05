@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import dao.IRepository;
 import domain.model.TeamMember;
 
-public abstract class TeamMemberMapper implements IMapResultSetIntoEntity<TeamMember>{
+public class TeamMemberMapper implements IMapResultSetIntoEntity<TeamMember>{
 
 private IRepository<TeamMember> teamMemberRepo;
 
