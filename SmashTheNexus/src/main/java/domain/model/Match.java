@@ -6,8 +6,8 @@ public class Match implements IHaveId{
 
 	private int id;
 	private Date date;
-	private Team FirstTeam;
-	private Team SecondTeam;
+	private int FirstTeam;
+	private int SecondTeam;
 	private int FirstTeamId;
 	private int SecondTeamId;
 	private String Result;
@@ -26,16 +26,16 @@ public class Match implements IHaveId{
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public Team getFirstTeam() {
+	public int getFirstTeam() {
 		return FirstTeam;
 	}
-	public void setFirstTeam(Team firstTeam) {
+	public void setFirstTeam(int firstTeam) {
 		FirstTeam = firstTeam;
 	}
-	public Team getSecondTeam() {
+	public int getSecondTeam() {
 		return SecondTeam;
 	}
-	public void setSecondTeam(Team secondTeam) {
+	public void setSecondTeam(int secondTeam) {
 		SecondTeam = secondTeam;
 	}
 	public String getResult() {

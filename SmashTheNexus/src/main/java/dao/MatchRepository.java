@@ -57,13 +57,6 @@ public class MatchRepository extends RepositoryBase<Match> implements IMatchRepo
 		return "UPDATE match set match_date=?,first_team_ID=?,second_team_ID=?,result=?,best_of=? WHERE id=?";
 	}
 
-	public void fillwithTeams(Match matchWithoutTeams) {
 
-		Team t1 = repo.get(matchWithoutTeams.getFirstTeamId());
-		Team t2 = repo.get(matchWithoutTeams.getSecondTeamId());
-		matchWithoutTeams.setFirstTeam(t1);
-		matchWithoutTeams.setSecondTeam(t2);
-
-	}
 
 }
