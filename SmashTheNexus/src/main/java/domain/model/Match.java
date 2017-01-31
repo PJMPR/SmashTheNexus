@@ -24,9 +24,7 @@ public class Match implements IHaveId{
 	private int id;
 	@Column(name = "match_date")
 	private Date date;
-	@OneToOne
 	private Team FirstTeam;
-	@OneToOne
 	private Team SecondTeam;
 	private String Result;
 	private int BestOf;
