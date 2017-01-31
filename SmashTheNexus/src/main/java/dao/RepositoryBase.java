@@ -25,6 +25,7 @@ public abstract class RepositoryBase<TEntity extends IHaveId> implements IReposi
 	protected PreparedStatement update;
 	protected PreparedStatement selectById;
 	protected PreparedStatement selectAll;
+	protected PreparedStatement selectLastId;
 
 	protected IMapResultSetIntoEntity<TEntity> mapper;
 
@@ -40,12 +41,25 @@ public abstract class RepositoryBase<TEntity extends IHaveId> implements IReposi
 			update = connection.prepareStatement(updateSql());
 			selectById = connection.prepareStatement(selectByIdSql());
 			selectAll = connection.prepareStatement(selectAllSql());
+			selectLastId = connection.prepareStatement(selectLastIdSql());
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
+	public int getLastId() {
+		try {
+			ResultSet rs = selectLastId.executeQuery();
+			while (rs.next()) {
+				return rs.getInt("id");
+			}
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+		return 0;
+	}
+	
 	public TEntity get(int id) {
 		try {
 
@@ -140,6 +154,10 @@ public abstract class RepositoryBase<TEntity extends IHaveId> implements IReposi
 
 	protected String selectAllSql() {
 		return "SELECT * FROM " + tableName();
+	}
+	
+	protected String selectLastIdSql() {
+		return "SELECT TOP 1 id FROM " + tableName()+ " ORDER BY id DESC";
 	}
 
 	protected abstract void setInsert(TEntity entity) throws SQLException;

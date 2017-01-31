@@ -5,7 +5,7 @@
 	<groupId>SmashTheNexus</groupId>
 	<artifactId>SmashTheNexus</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>SmashTheNexus</name>
 	<url>http://maven.apache.org</url>
@@ -14,39 +14,67 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<dependencies>
+  <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
-    
-	<dependency>
-	    <groupId>org.hsqldb</groupId>
-	    <artifactId>hsqldb</artifactId>
-	    <version>2.3.4</version>
-	</dependency>
-	
-	<dependency>
+    <dependency>
+      <groupId>org.hsqldb</groupId>
+      <artifactId>hsqldb</artifactId>
+      <version>2.3.4</version>
+    </dependency>
+    <dependency>
 		<groupId>javax</groupId>
-		<artifactId>javaee-api</artifactId>
+		<artifactId>javaee-web-api</artifactId>
 		<version>7.0</version>
 	</dependency>
-	
-	
+	<dependency>
+			<groupId>com.jayway.restassured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>2.4.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.restassured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>2.4.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+    <groupId>net.sf.dozer</groupId>
+    <artifactId>dozer</artifactId>
+    <version>5.5.1</version>
+</dependency>
   </dependencies>
   <build>
-  <finalName>currencyapp</finalName>
+  <finalName>SmashTheNexus</finalName>
   	<plugins>
   		<plugin>
-  			<groupId>org.mortbay.jetty</groupId>
-			<artifactId>jetty-maven-plugin</artifactId>
-			<version>8.0.3.v20111011</version>
-			<configuration>
-				<scanIntervalSeconds>3</scanIntervalSeconds>
-			</configuration>
-  		</plugin>
+		 <groupId>org.eclipse.jetty</groupId>
+		 <artifactId>jetty-maven-plugin</artifactId>
+		 <version>9.3.7.v20160115</version>
+		 <configuration>  
+		 	<scanIntervalSeconds>1</scanIntervalSeconds> 
+		 </configuration>
+		</plugin>
+		<plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
   	</plugins>
   </build>
 </project>

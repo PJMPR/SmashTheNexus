@@ -19,7 +19,6 @@ private IRepository<TeamMember> teamMemberRepo;
 		teamMember.setName(rs.getString("name"));
 		teamMember.setSurname(rs.getString("surname"));
 		teamMember.setNick(rs.getString("nick"));
-		teamMember.setTeamID(rs.getInt("team_id"));
 		teamMember.setAge(rs.getInt("age"));
 		teamMember.setCountry(rs.getString("country"));
 		teamMember.setFavouriteChampion(rs.getString("fav_champ"));

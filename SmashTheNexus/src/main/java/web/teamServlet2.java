@@ -16,7 +16,6 @@ public class teamServlet2 extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Team team2 = new Team();
-		team2.setId(1);
 		team2.setName(request.getParameter("name"));
 		team2.setWins(Integer.parseInt(request.getParameter("wins")));
 		team2.setLoses(Integer.parseInt(request.getParameter("loses")));

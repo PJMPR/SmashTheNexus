@@ -17,8 +17,6 @@ public class MatchMapper implements IMapResultSetIntoEntity<Match> {
 		Match match = new Match();
 		match.setId(rs.getInt("id"));
 		match.setDate(rs.getDate("date"));
-		match.setFirstTeamId(rs.getInt("firstTeam"));
-		match.setSecondTeamId(rs.getInt("secondTeam"));
 		match.setResult(rs.getString("result"));
 		match.setBestOf(rs.getInt("bestOf"));
 		return match;

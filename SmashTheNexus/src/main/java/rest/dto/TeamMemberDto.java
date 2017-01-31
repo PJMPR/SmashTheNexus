@@ -1,29 +1,14 @@
-package domain.model;
+package rest.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
-@Entity
-@Table(name = "team_Member")
-@NamedQueries({ 
-		@NamedQuery(name = "teamMember.all", query = "SELECT t FROM TeamMember t"),
-		@NamedQuery(name = "teamMember.id", query = "SELECT t FROM TeamMember t WHERE t.id=:id") })
-public class TeamMember implements IHaveId{
+@XmlRootElement
+public class TeamMemberDto {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String Name;
 	private String Surname;
 	private String Nick;
-	@OneToOne
-	private Team team;
 	private int Age;
 	private String Country;
 	private String FavouriteChampion;
@@ -83,13 +68,5 @@ public class TeamMember implements IHaveId{
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public Team getTeam() {
-		return team;
-	}
-
-	public void setTeam(Team team) {
-		this.team = team;
-	}
-
+	
 }

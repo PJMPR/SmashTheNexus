@@ -38,7 +38,6 @@ public class App {
 			t1tm1.setName("Jack");
 			t1tm1.setSurname("Smith");
 			t1tm1.setNick("Guarm");
-			t1tm1.setTeamID(0);
 			t1tm1.setAge(20);
 			t1tm1.setCountry("England");
 			t1tm1.setFavouriteChampion("Cassiopeia");
@@ -48,7 +47,6 @@ public class App {
 			t1tm2.setName("Johanna");
 			t1tm2.setSurname("Claw");
 			t1tm2.setNick("Clawreen");
-			t1tm2.setTeamID(0);
 			t1tm2.setAge(17);
 			t1tm2.setCountry("Canada");
 			t1tm2.setFavouriteChampion("Rengar");
@@ -58,7 +56,6 @@ public class App {
 			t1tm3.setName("Jan");
 			t1tm3.setSurname("Tarczyński");
 			t1tm3.setNick("Shield");
-			t1tm3.setTeamID(0);
 			t1tm3.setAge(23);
 			t1tm3.setCountry("Poland");
 			t1tm3.setFavouriteChampion("Leona");
@@ -68,7 +65,6 @@ public class App {
 			t1tm4.setName("Elżbieta");
 			t1tm4.setSurname("Strzelnicka");
 			t1tm4.setNick("SwiftArrow");
-			t1tm4.setTeamID(0);
 			t1tm4.setAge(19);
 			t1tm4.setCountry("Poland");
 			t1tm4.setFavouriteChampion("Kindred");
@@ -78,7 +74,6 @@ public class App {
 			t1tm5.setName("Akira");
 			t1tm5.setSurname("Kenmura");
 			t1tm5.setNick("FastSlam");
-			t1tm5.setTeamID(0);
 			t1tm5.setAge(18);
 			t1tm5.setCountry("Japan");
 			t1tm5.setFavouriteChampion("Illaoi");
@@ -88,7 +83,6 @@ public class App {
 			t2tm1.setName("Ronald");
 			t2tm1.setSurname("Bush");
 			t2tm1.setNick("Cleave");
-			t2tm1.setTeamID(1);
 			t2tm1.setAge(20);
 			t2tm1.setCountry("England");
 			t2tm1.setFavouriteChampion("Olaf");
@@ -98,7 +92,6 @@ public class App {
 			t2tm2.setName("Eyir");
 			t2tm2.setSurname("Lightshield");
 			t2tm2.setNick("DieAlone");
-			t2tm2.setTeamID(1);
 			t2tm2.setAge(17);
 			t2tm2.setCountry("Norway");
 			t2tm2.setFavouriteChampion("Braum");
@@ -108,7 +101,6 @@ public class App {
 			t2tm3.setName("Olaf");
 			t2tm3.setSurname("Nothex");
 			t2tm3.setNick("Olvarn");
-			t2tm3.setTeamID(1);
 			t2tm3.setAge(23);
 			t2tm3.setCountry("Norway");
 			t2tm3.setFavouriteChampion("Orianna");
@@ -118,7 +110,6 @@ public class App {
 			t2tm4.setName("Catherine");
 			t2tm4.setSurname("Sheer");
 			t2tm4.setNick("Druid");
-			t2tm4.setTeamID(1);
 			t2tm4.setAge(19);
 			t2tm4.setCountry("Poland");
 			t2tm4.setFavouriteChampion("Ivern");
@@ -128,7 +119,6 @@ public class App {
 			t2tm5.setName("Tokura");
 			t2tm5.setSurname("Shizuka");
 			t2tm5.setNick("Machinizer");
-			t2tm5.setTeamID(1);
 			t2tm5.setAge(18);
 			t2tm5.setCountry("Japan");
 			t2tm5.setFavouriteChampion("Corki");
@@ -136,8 +126,6 @@ public class App {
 			
 			Match m1 = new Match();
 			m1.setDate(new Date(2016-1900,11-1,11));
-			m1.setFirstTeamId(0);
-			m1.setSecondTeamId(1);
 			m1.setResult("3:0");
 			m1.setBestOf(3);
 			catalog.matches().add(m1);
